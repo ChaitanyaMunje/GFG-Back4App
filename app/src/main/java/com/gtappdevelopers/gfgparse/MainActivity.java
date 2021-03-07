@@ -10,14 +10,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.parse.ParseException;
 import com.parse.ParseUser;
-import com.parse.SignUpCallback;
 
 public class MainActivity extends AppCompatActivity {
     //creating variables for our edit text and buttons.
     private EditText userNameEdt, passwordEdt;
-    private Button registerBtn;
+    private Button loginBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
         //initializing our edit text  and buttons.
         userNameEdt = findViewById(R.id.idEdtUserName);
         passwordEdt = findViewById(R.id.idEdtPassword);
-        registerBtn = findViewById(R.id.idBtnRegister);
-        //adding on click listner for our button.
-        registerBtn.setOnClickListener(new View.OnClickListener() {
+        loginBtn = findViewById(R.id.idBtnLogin);
+        //adding on click listener for our button.
+        loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //on below line we are getting data from our edit text.
@@ -38,37 +36,27 @@ public class MainActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(userName) && TextUtils.isEmpty(password)) {
                     Toast.makeText(MainActivity.this, "Please enter user name and password", Toast.LENGTH_SHORT).show();
                 }
-                //calling a method to register a user.
-                registerUser(userName, password);
+                //calling a method to login our user.
+                loginUser(userName, password);
             }
         });
-
     }
 
-    private void registerUser(String userName, String password) {
-        //on below line we are creating a new user using parse user.
-        ParseUser user = new ParseUser();
-        // Set the user's username and password, which can be obtained from edit text
-        user.setUsername(userName);
-        user.setPassword(password);
-        //calling a method to register the user.
-        user.signUpInBackground(new SignUpCallback() {
-            @Override
-            public void done(ParseException e) {
-                //on user registration checking if the error is null or not.
-                if (e == null) {
-                    //if the error is null we are displaying a toast message and redirecting our user to new activity and passing the user name.
-                    Toast.makeText(MainActivity.this, "User Registered succesfully", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(MainActivity.this, HomeActivity.class);
-                    i.putExtra("username", userName);
-                    startActivity(i);
-                } else {
-                    //if we get any erro then we are logging out our user and displaying an error message
-                    ParseUser.logOut();
-                    Toast.makeText(MainActivity.this, "Fail to Register User..", Toast.LENGTH_SHORT).show();
-                }
+    private void loginUser(String userName, String password) {
+        //calling a method to login a user.
+        ParseUser.logInInBackground(userName, password, (parseUser, e) -> {
+            //after login checking if the user is null or not.
+            if (parseUser != null) {
+                //if the user is not null then we will display a toast message with user login and passing that user to new activity.
+                Toast.makeText(this, "Login Successful ", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(MainActivity.this, HomeActivity.class);
+                i.putExtra("username", userName);
+                startActivity(i);
+            } else {
+                //display an toast message when user logout of the app.
+                ParseUser.logOut();
+                Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
-
     }
 }

@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:gravity="center_horizontal"
-        android:text="Welcome to Geeks for Geeks"
+        android:text="Welcome back again to Geeks for Geeks"
         android:textAlignment="center"
         android:textColor="@color/purple_700"
         android:textSize="18sp" />
@@ -28,6 +28,17 @@
         android:textAlignment="center"
         android:textColor="@color/purple_700"
         android:textSize="25sp" />
+
+    <!--button for making user log out-->
+    <Button
+        android:id="@+id/idBtnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTVUserName"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:text="LogOut"
+        android:textAllCaps="false" />
 
 
 </RelativeLayout>
