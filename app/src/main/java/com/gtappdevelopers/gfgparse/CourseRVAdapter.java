@@ -1,6 +1,7 @@
 package com.gtappdevelopers.gfgparse;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +37,20 @@ public class CourseRVAdapter extends RecyclerView.Adapter<CourseRVAdapter.ViewHo
         holder.courseNameTV.setText(courses.getCourseName());
         holder.courseDurationTV.setText(courses.getCourseDuration());
         holder.courseDescTV.setText(courses.getCourseDescription());
+        //adding on click listner for our item of recycler view.
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //calling a intent to open new activity.
+                Intent i = new Intent(context, UpdateCourseActivity.class);
+                //on below line we are passing data to our intent on below line.
+                i.putExtra("courseName", courses.getCourseName());
+                i.putExtra("courseDescription", courses.getCourseDescription());
+                i.putExtra("courseDuration", courses.getCourseDuration());
+                //starting our activity on below line.
+                context.startActivity(i);
+            }
+        });
     }
 
     @Override
