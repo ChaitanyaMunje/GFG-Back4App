@@ -51,5 +51,15 @@
         android:text="Submit Course Details"
         android:textAllCaps="false" />
 
+    <!--Button for reading your course to Firebase-->
+    <Button
+        android:id="@+id/idBtnReadCourse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Read Course Details"
+        android:textAllCaps="false" />
+
+
 
 </LinearLayout>

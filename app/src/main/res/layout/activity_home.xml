@@ -4,41 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
-    <!--text view for displaying heading-->
-    <TextView
-        android:id="@+id/idTVHeader"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:gravity="center_horizontal"
-        android:text="Welcome back again to Geeks for Geeks"
-        android:textAlignment="center"
-        android:textColor="@color/purple_700"
-        android:textSize="18sp" />
-    <!--tet view for displaying user name-->
-    <TextView
-        android:id="@+id/idTVUserName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/idTVHeader"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="20dp"
-        android:gravity="center_horizontal"
-        android:text="UserName"
-        android:textAlignment="center"
-        android:textColor="@color/purple_700"
-        android:textSize="25sp" />
 
-    <!--button for making user log out-->
-    <Button
-        android:id="@+id/idBtnLogout"
+    <!--Recycler view for displaying our data from FIrestore-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/idRVCourses"
+        />
+
+    <!--Progress bar for showing loading screen-->
+    <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idTVUserName"
+        android:id="@+id/idProgressBar"
         android:layout_centerInParent="true"
-        android:layout_marginTop="10dp"
-        android:text="LogOut"
-        android:textAllCaps="false" />
+        />
 
 
 </RelativeLayout>

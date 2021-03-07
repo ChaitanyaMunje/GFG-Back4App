@@ -1,5 +1,6 @@
 package com.gtappdevelopers.gfgparse;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     //creating variables for our edit text
     private EditText courseNameEdt, courseDurationEdt, courseDescriptionEdt;
     //creating variable for button
-    private Button submitCourseBtn;
+    private Button submitCourseBtn, readCourseBtn;
     //creating a strings for storing our values from edittext fields.
     private String courseName, courseDuration, courseDescription;
 
@@ -27,10 +28,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //initializing our edittext and buttons
+        readCourseBtn = findViewById(R.id.idBtnReadCourse);
         courseNameEdt = findViewById(R.id.idEdtCourseName);
         courseDescriptionEdt = findViewById(R.id.idEdtCourseDescription);
         courseDurationEdt = findViewById(R.id.idEdtCourseDuration);
         submitCourseBtn = findViewById(R.id.idBtnSubmitCourse);
+        readCourseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(i);
+            }
+        });
         submitCourseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
