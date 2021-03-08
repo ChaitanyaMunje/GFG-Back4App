@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
     <!--text view for heading-->
     <TextView
@@ -14,7 +13,7 @@
         android:layout_marginTop="30dp"
         android:gravity="center_horizontal"
         android:padding="5dp"
-        android:text="Welcome to Geeks for Geeks \n Register Form"
+        android:text="Welcome to Geeks for Geeks \n Login Form"
         android:textAlignment="center"
         android:textColor="@color/purple_700"
         android:textSize="18sp" />
@@ -29,27 +28,14 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="10dp"
         android:hint="Enter UserName"
-        android:inputType="text" />
-
-    <!--edit text for user email-->
-    <EditText
-        android:id="@+id/idEdtEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/idEdtUserName"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        android:hint="Enter Email Address"
         android:inputType="textEmailAddress" />
-
 
     <!--edit text for user password-->
     <EditText
         android:id="@+id/idEdtPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idEdtEmail"
+        android:layout_below="@id/idEdtUserName"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
@@ -58,15 +44,13 @@
 
     <!--button to register our new user-->
     <Button
-        android:id="@+id/idBtnRegister"
+        android:id="@+id/idBtnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/idEdtPassword"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
-        android:text="Register User"
+        android:text="Login"
         android:textAllCaps="false" />
-
-
 </RelativeLayout>

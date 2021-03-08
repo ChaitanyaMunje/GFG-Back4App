@@ -94,7 +94,7 @@ public class UpdateCourseActivity extends AppCompatActivity {
                             if (e == null) {
                                 //if the error is not null then we are displaying a toast message and opening our home activity.
                                 Toast.makeText(UpdateCourseActivity.this, "Course Deleted..", Toast.LENGTH_SHORT).show();
-                                Intent i = new Intent(UpdateCourseActivity.this, HomeActivity.class);
+                                Intent i = new Intent(UpdateCourseActivity.this, LoginActivity.class);
                                 startActivity(i);
                             } else {
                                 //if we get error we are displaying it in below line.
@@ -146,7 +146,7 @@ public class UpdateCourseActivity extends AppCompatActivity {
                                             //if the error is null our data has been updated.
                                             //we are displaying a toast message and redirecting our user to home activity where we are displaying course list.
                                             Toast.makeText(UpdateCourseActivity.this, "Course Updated..", Toast.LENGTH_SHORT).show();
-                                            Intent i = new Intent(UpdateCourseActivity.this, HomeActivity.class);
+                                            Intent i = new Intent(UpdateCourseActivity.this, LoginActivity.class);
                                             startActivity(i);
                                         } else {
                                             //below line is for error handling.
