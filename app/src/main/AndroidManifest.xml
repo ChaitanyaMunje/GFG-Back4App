@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gtappdevelopers.gfgparse">
+    <!--permissions to read contacts-->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!--permissions to write contacts-->
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <!--permissions to make a call-->
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <!--permissions to send sms-->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <!--permissions to write sms-->
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" /> <!-- Meta data for your file for server url -->
     <meta-data
         android:name="com.parse.SERVER_URL"
@@ -22,7 +31,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GFGParse">
-        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".CreateNewContactActivity"></activity>
+        <activity android:name=".ContactDetailActivity" />
+        <activity android:name=".HomeActivity" />
         <activity android:name=".UpdateCourseActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity">

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/idRLContact"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="3dp">
+    <!--image view for displaying the first letter of contact-->
+    <ImageView
+        android:id="@+id/idIVContact"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="8dp"
+        android:padding="3dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <!--text view for displaying user name-->
+    <TextView
+        android:id="@+id/idTVContactName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toRightOf="@id/idIVContact"
+        android:text="Contact Name"
+        android:textColor="@color/black" />
+
+</RelativeLayout>
