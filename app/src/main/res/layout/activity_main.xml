@@ -1,35 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <!--Recycler view for displaying list of contacts-->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/idRVContacts"
+    <!--Edit text for entering the amount-->
+    <EditText
+        android:id="@+id/idEdtAmount"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Enter Amount to be Paid"
+        android:inputType="numberDecimal" />
 
-    <!--progress bar for displaying loading-->
-    <ProgressBar
-        android:id="@+id/idPBLoading"
+    <!--button for making a payment-->
+    <Button
+        android:id="@+id/idBtnPay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true" />
+        android:layout_below="@id/idEdtAmount"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:text="Make Payment" />
 
-    <!--fab for adding a new contact-->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/idFABadd"
-        android:layout_width="wrap_content"
+    <!--text view for displaying payment status-->
+    <TextView
+        android:id="@+id/idTVStatus"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="20dp"
-        android:src="@drawable/ic_add"
-        app:fabCustomSize="40dp"
-        app:tint="@color/white" />
+        android:layout_below="@id/idBtnPay"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:textColor="@color/purple_200"
+        android:textSize="20sp" />
 
 </RelativeLayout>
